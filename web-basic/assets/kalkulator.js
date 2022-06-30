@@ -48,8 +48,19 @@ const handleOperator = (operator) => {
 }
 
 const performCalculation = () => {
-    calculator.displayNumber = eval(calculator.firstNumber + calculator.operator + calculator.displayNumber);
+    let result = eval(calculator.firstNumber + calculator.operator + calculator.displayNumber);
     calculator.newCalculation = true;
+
+    const history = {
+        firstNumber: calculator.firstNumber,
+        secondNumber: calculator.displayNumber,
+        operator: calculator.operator,
+        result: result
+    }
+    putHistory(history);
+    calculator.displayNumber = result;
+    renderHistory();
+
 }
 
 const buttons = document.querySelectorAll('.button');

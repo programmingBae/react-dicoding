@@ -17,6 +17,13 @@ class NoteInput extends React.Component{
     onSubmitEventHandler(event){
         event.preventDefault();
         this.props.addNotes(this.state);
+        this.setState((prevState) => {
+            return {
+                maxChar: 50,
+                title: "",
+                body: ""
+            }
+        })
     }
 
     onTitleEventHandler(event){

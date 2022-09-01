@@ -42,7 +42,7 @@ class NoteInput extends React.Component{
                 <h2>Buat Catatan</h2>
                 <form onSubmit={this.onSubmitEventHandler}>
                     <p className="note-input__title__char-limit">Sisa karakter : {this.state.maxChar} </p>
-                    <input value={this.state.title} maxLength="60" onChange={this.onTitleEventHandler} className="note-input__title" type="text" placeholder="Ini adalah judul ..." required />
+                    <input value={this.state.title} maxLength="50" onChange={this.onTitleEventHandler} className="note-input__title" type="text" placeholder="Ini adalah judul ..." required />
                     <textarea value={this.state.body} onChange={this.onBodyEventHandler} className="note-input__body" type="text" placeholder="Tuliskan catatanmu disini ..." required />
                     <button type="submit">Buat</button>
                 </form>
